@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Smart Hospital Management System</title>
+
+<link rel="stylesheet" th:href="@{/css/dashboard.css}">
+
+</head>
+
+<body>
+
+<header>
+    <h1>🏥 Smart Hospital Management System</h1>
+</header>
+
+<div class="container">
+
+    <h2>Dashboard</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Patients</h3>
+            <p>Manage Patients</p>
+        </div>
+
+        <div class="card">
+            <h3>Doctors</h3>
+            <p>Manage Doctors</p>
+        </div>
+
+        <div class="card">
+            <h3>Appointments</h3>
+            <p>Book Appointments</p>
+        </div>
+
+        <div class="card">
+            <h3>Billing</h3>
+            <p>Generate Bills</p>
+        </div>
+
+        <div class="card">
+            <h3>Prescriptions</h3>
+            <p>Doctor Prescriptions</p>
+        </div>
+
+        <div class="card">
+            <h3>Reports</h3>
+            <p>Hospital Reports</p>
+        </div>
+
+    </div>
+
+    <h2>System Modules</h2>
+
+    <ul>
+        <li>User Authentication</li>
+        <li>Doctor Management</li>
+        <li>Patient Management</li>
+        <li>Appointment Booking</li>
+        <li>Prescription Management</li>
+        <li>Medical Records</li>
+        <li>Billing</li>
+        <li>Reports</li>
+    </ul>
+
+    <h2>User Roles</h2>
+
+    <table>
+
+        <tr>
+            <th>Role</th>
+            <th>Responsibilities</th>
+        </tr>
+
+        <tr>
+            <td>Administrator</td>
+            <td>Manage doctors, patients, reports and billing.</td>
+        </tr>
+
+        <tr>
+            <td>Doctor</td>
+            <td>View appointments, prescribe medicines, update records.</td>
+        </tr>
+
+        <tr>
+            <td>Receptionist</td>
+            <td>Register patients and schedule appointments.</td>
+        </tr>
+
+        <tr>
+            <td>Patient</td>
+            <td>Book appointments and view prescriptions.</td>
+        </tr>
+
+    </table>
+
+</div>
+
+<footer>
+    © 2026 Smart Hospital Management System
+</footer>
+
+</body>
+</html>
