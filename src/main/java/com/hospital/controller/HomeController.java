@@ -29,7 +29,7 @@ public class HomeController {
     public String loginPage() {
         return "login";
     }
-    System.out.println("Logged in user: " + user.getEmail());
+   
     
     @GetMapping("/testmail")
     @ResponseBody
