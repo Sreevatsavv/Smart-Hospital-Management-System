@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Patient</title>
+
+    <link rel="stylesheet" th:href="@{/css/patient.css}">
+</head>
+
+<body>
+
+<div class="form-box">
+
+    <h2>Edit Patient</h2>
+
+    <form th:action="@{/patient/update}" th:object="${patient}" method="post">
+
+        <input type="hidden" th:field="*{id}">
+
+        <input type="text" th:field="*{name}" placeholder="Patient Name">
+
+        <input type="number" th:field="*{age}" placeholder="Age">
+
+        <select th:field="*{gender}">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <input type="text" th:field="*{bloodGroup}" placeholder="Blood Group">
+
+        <input type="text" th:field="*{disease}" placeholder="Disease">
+
+        <input type="text" th:field="*{phone}" placeholder="Phone Number">
+
+        <textarea th:field="*{address}" placeholder="Address"></textarea>
+
+        <button type="submit">
+            Update Patient
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Add Patient</title>
+
+<link rel="stylesheet" th:href="@{/css/patient.css}">
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+<a class="btn" th:href="@{/patient/list}">
+← Back to Patient List
+</a>
+
+<br><br>
+
+<h2>Add Patient</h2>
+
+<form th:action="@{/patient/save}" th:object="${patient}" method="post">
+
+<input type="text" th:field="*{name}" placeholder="Patient Name">
+
+<input type="email"
+       th:field="*{email}"
+       placeholder="Email"
+       required>
+
+<input type="number" th:field="*{age}" placeholder="Age">
+
+<select th:field="*{gender}">
+<option value="">Select Gender</option>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+<option value="Other">Other</option>
+</select>
+
+<input type="text" th:field="*{bloodGroup}" placeholder="Blood Group">
+
+<input type="text" th:field="*{disease}" placeholder="Disease">
+
+<input type="text" th:field="*{phone}" placeholder="Phone">
+
+<textarea th:field="*{address}" placeholder="Address"></textarea>
+
+<button type="submit">
+Save Patient
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

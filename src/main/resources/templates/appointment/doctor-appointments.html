@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Doctor Appointments</title>
+
+<link rel="stylesheet" th:href="@{/css/appointment.css}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>My Appointments</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Patient</th>
+<th>Date</th>
+<th>Time</th>
+<th>Reason</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr th:each="appointment : ${appointments}">
+
+<td th:text="${appointment.patient.name}"></td>
+
+<td th:text="${appointment.appointmentDate}"></td>
+
+<td th:text="${appointment.appointmentTime}"></td>
+
+<td th:text="${appointment.reason}"></td>
+
+<td>
+
+<span th:text="${appointment.status}"></span>
+
+</td>
+
+<td>
+
+<a class="accept"
+th:href="@{'/appointment/accept/' + ${appointment.id}}">
+Accept
+</a>
+
+<a class="reject"
+th:href="@{'/appointment/reject/' + ${appointment.id}}">
+Reject
+</a>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</body>
+
+</html>

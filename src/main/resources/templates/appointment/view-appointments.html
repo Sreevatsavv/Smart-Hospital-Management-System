@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Appointments</title>
+
+<link rel="stylesheet" th:href="@{/css/appointment.css}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="top-bar">
+
+<h2>Appointments</h2>
+
+<div>
+
+<a class="btn"
+th:href="@{/}">
+Dashboard
+</a>
+
+<a class="btn"
+th:href="@{/appointment/add}">
+Book Appointment
+</a>
+
+</div>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Doctor</th>
+<th>Patient</th>
+<th>Date</th>
+<th>Time</th>
+<th>Reason</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+<tr th:each="appointment : ${appointments}">
+
+<td th:text="${appointment.id}"></td>
+
+<td th:text="${appointment.doctor.name}"></td>
+
+<td th:text="${appointment.patient.name}"></td>
+
+<td th:text="${appointment.appointmentDate}"></td>
+
+<td th:text="${appointment.appointmentTime}"></td>
+
+<td th:text="${appointment.reason}"></td>
+
+<td>
+
+<span class="pending"
+th:if="${appointment.status=='PENDING'}">
+PENDING
+</span>
+
+<span class="accepted"
+th:if="${appointment.status=='ACCEPTED'}">
+ACCEPTED
+</span>
+
+<span class="rejected"
+th:if="${appointment.status=='REJECTED'}">
+REJECTED
+</span>
+
+</td>
+
+<td>
+
+<a class="accept"
+th:if="${appointment.status=='PENDING'}"
+th:href="@{/appointment/accept/{id}(id=${appointment.id})}">
+Accept
+</a>
+
+<a class="reject"
+th:if="${appointment.status=='PENDING'}"
+th:href="@{/appointment/reject/{id}(id=${appointment.id})}">
+Reject
+</a>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</body>
+
+</html>

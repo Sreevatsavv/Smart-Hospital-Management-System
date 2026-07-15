@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Patient Management</title>
+
+<link rel="stylesheet" th:href="@{/css/patient.css}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="top-bar">
+
+<h2>Patient Management</h2>
+
+<div>
+
+<a class="btn" th:href="@{/}">
+🏠 Dashboard
+</a>
+
+<a class="btn" th:href="@{/patient/add}">
++ Add Patient
+</a>
+
+</div>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Blood Group</th>
+<th>Disease</th>
+<th>Phone</th>
+<th>Address</th>
+<th>Actions</th>
+
+</tr>
+
+<tr th:each="patient : ${patients}">
+
+<td th:text="${patient.id}"></td>
+<td th:text="${patient.name}"></td>
+<td th:text="${patient.email}"></td>
+<td th:text="${patient.age}"></td>
+<td th:text="${patient.gender}"></td>
+<td th:text="${patient.bloodGroup}"></td>
+<td th:text="${patient.disease}"></td>
+<td th:text="${patient.phone}"></td>
+<td th:text="${patient.address}"></td>
+
+<td>
+
+<a class="edit"
+th:href="@{/patient/edit/{id}(id=${patient.id})}">
+Edit
+</a>
+
+<a class="delete"
+th:href="@{/patient/delete/{id}(id=${patient.id})}"
+onclick="return confirm('Delete this patient?')">
+Delete
+</a>
+
+<a class="btn"
+th:href="@{/appointment/add}">
+Book Appointment
+</a>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</body>
+
+</html>

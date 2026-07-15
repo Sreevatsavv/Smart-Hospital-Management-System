@@ -1,5 +1,9 @@
 package com.hospital.repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public class DoctorRepository {
+import com.hospital.entity.Doctor;
+
+public interface DoctorRepository extends JpaRepository<Doctor, Long> {
+	Doctor findByEmail(String email);
 
 }

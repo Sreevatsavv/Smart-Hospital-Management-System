@@ -7,22 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class DashboardController {
 
     @GetMapping("/admin")
-    public String admin() {
-        return "admin";
+    public String adminDashboard() {
+        return "admin/dashboard";
     }
 
     @GetMapping("/doctor")
-    public String doctor() {
-        return "doctor";
-    }
-
-    @GetMapping("/receptionist")
-    public String receptionist() {
-        return "receptionist";
+    public String doctorDashboard() {
+        return "doctor/dashboard";
     }
 
     @GetMapping("/patient")
-    public String patient() {
-        return "patient";
+    public String patientDashboard() {
+        return "patient/dashboard";
     }
 }

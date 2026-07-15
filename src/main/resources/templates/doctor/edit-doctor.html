@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Edit Doctor</title>
+
+<link rel="stylesheet" th:href="@{/css/login.css}">
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h2>Edit Doctor</h2>
+
+<form th:action="@{/doctor/update}"
+      th:object="${doctor}"
+      method="post">
+
+<input type="hidden" th:field="*{id}">
+
+<input type="text"
+       th:field="*{name}"
+       placeholder="Doctor Name">
+
+<input type="text"
+       th:field="*{specialization}"
+       placeholder="Specialization">
+
+<input type="text"
+       th:field="*{qualification}"
+       placeholder="Qualification">
+
+<input type="number"
+       th:field="*{experience}"
+       placeholder="Experience">
+
+<input type="text"
+       th:field="*{phone}"
+       placeholder="Phone">
+
+<input type="email"
+       th:field="*{email}"
+       placeholder="Email">
+
+<button type="submit">
+
+Update Doctor
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

@@ -35,13 +35,9 @@
                placeholder="Password"
                required>
 
-        <select th:field="*{role}" required>
-            <option value="">-- Select Role --</option>
-            <option value="Administrator">Administrator</option>
-            <option value="Doctor">Doctor</option>
-            <option value="Receptionist">Receptionist</option>
-            <option value="Patient">Patient</option>
-        </select>
+			   <select th:field="*{role}">
+			       <option value="Patient">Patient</option>
+			   </select>
 
         <br><br>
 
@@ -51,10 +47,12 @@
 
     <br>
 
-    <p>
-        Already have an account?
-        <a th:href="@{/login}">Login</a>
-    </p>
+	<p>
+	Already have an account?
+	<a th:href="@{/login}">
+	Login
+	</a>
+	</p>
 
 </div>
 

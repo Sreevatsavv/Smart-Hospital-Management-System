@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>My Appointments</title>
+
+<link rel="stylesheet" th:href="@{/css/appointment.css}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>My Appointments</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Doctor</th>
+<th>Date</th>
+<th>Time</th>
+<th>Reason</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr th:each="appointment : ${appointments}">
+
+<td th:text="${appointment.doctor.name}"></td>
+
+<td th:text="${appointment.appointmentDate}"></td>
+
+<td th:text="${appointment.appointmentTime}"></td>
+
+<td th:text="${appointment.reason}"></td>
+
+<td>
+
+<span th:text="${appointment.status}"></span>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="top-buttons">
+
+    <a th:href="@{/patient}" class="dashboard-btn">
+        ← Return to Dashboard
+    </a>
+
+    <a th:href="@{/appointment/add}" class="book-btn">
+        + Book Another Appointment
+    </a>
+
+</div>
+
+<h2>My Appointments</h2>
+
+</body>
+
+</html>

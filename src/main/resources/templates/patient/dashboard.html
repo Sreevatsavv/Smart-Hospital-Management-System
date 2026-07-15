@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Patient Dashboard</title>
+
+<link rel="stylesheet" th:href="@{/css/dashboard.css}">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🧑 Patient Dashboard</h1>
+
+</header>
+
+<div class="container">
+
+<h2>Welcome Patient</h2>
+
+<div class="cards">
+
+<a class="card" th:href="@{/appointment/add}">
+    <h3>📅 Book Appointment</h3>
+    <p>Schedule a Doctor Visit</p>
+</a>
+
+<a class="card" th:href="@{/patient/appointments}">
+    <h3>📋 My Appointments</h3>
+    <p>Track Appointment Status</p>
+</a>
+
+<a class="card" href="#">
+    <h3>👤 My Profile</h3>
+    <p>View Personal Details</p>
+</a>
+
+<a class="card logout" th:href="@{/login}">
+    <h3>🚪 Logout</h3>
+    <p>Sign Out</p>
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Smart Hospital Management System
+
+</footer>
+
+</body>
+
+</html>

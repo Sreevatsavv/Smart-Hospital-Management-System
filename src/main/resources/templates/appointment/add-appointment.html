@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Book Appointment</title>
+
+<link rel="stylesheet" th:href="@{/css/appointment.css}">
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+<a class="btn" th:href="@{/appointment/list}">
+← Appointment List
+</a>
+
+<br><br>
+
+<h2>Book Appointment</h2>
+
+<form th:action="@{/appointment/save}"
+      th:object="${appointment}"
+      method="post">
+
+<label>Select Doctor</label>
+
+<select name="doctorId" required>
+
+<option value="">Choose Doctor</option>
+
+<option
+th:each="doctor : ${doctors}"
+th:value="${doctor.id}"
+th:text="${doctor.name}">
+</option>
+
+</select>
+
+<label>Patient</label>
+
+<input
+type="text"
+th:value="${patient.name}"
+readonly>
+
+<input
+type="hidden"
+name="patientId"
+th:value="${patient.id}">
+
+<input type="date"
+th:field="*{appointmentDate}"
+required>
+
+<input type="time"
+th:field="*{appointmentTime}"
+required>
+
+<textarea
+th:field="*{reason}"
+placeholder="Reason for Appointment">
+</textarea>
+
+<button type="submit">
+
+Book Appointment
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
