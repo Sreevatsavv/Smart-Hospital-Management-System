@@ -1,0 +1,28 @@
+#map {
+
+    width: 90%;
+
+    max-width: 1100px;
+
+    height: 450px;
+
+    margin: 20px auto 40px auto;
+
+    border-radius: 15px;
+
+    border: 2px solid #1e66d0;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+
+}
+h2{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    color:#1e66d0;
+
+}

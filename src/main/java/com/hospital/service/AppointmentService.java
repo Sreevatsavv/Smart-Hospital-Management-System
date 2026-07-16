@@ -15,6 +15,9 @@ public class AppointmentService {
 
     @Autowired
     private AppointmentRepository appointmentRepository;
+    
+    @Autowired
+    private EmailService emailService;
 
     public Appointment saveAppointment(Appointment appointment) {
 
@@ -59,10 +62,27 @@ public class AppointmentService {
         if (appointment != null) {
 
             appointment.setStatus("ACCEPTED");
-
             appointmentRepository.save(appointment);
-        }
 
+            Patient patient = appointment.getPatient();
+            Doctor doctor = appointment.getDoctor();
+
+            String subject = "Appointment Accepted";
+
+            String body =
+                    "Hello " + patient.getName() + ",\n\n" +
+                    "Your appointment has been ACCEPTED.\n\n" +
+                    "Doctor : Dr. " + doctor.getName() + "\n" +
+                    "Date : " + appointment.getAppointmentDate() + "\n" +
+                    "Time : " + appointment.getAppointmentTime() + "\n\n" +
+                    "Thank you,\n" +
+                    "Smart Hospital Management System";
+
+            emailService.sendEmail(
+                    patient.getEmail(),
+                    subject,
+                    body);
+        }
     }
 
     public void rejectAppointment(Long id) {
@@ -73,10 +93,24 @@ public class AppointmentService {
         if (appointment != null) {
 
             appointment.setStatus("REJECTED");
-
             appointmentRepository.save(appointment);
-        }
 
+            Patient patient = appointment.getPatient();
+
+            String subject = "Appointment Rejected";
+
+            String body =
+                    "Hello " + patient.getName() + ",\n\n" +
+                    "Unfortunately your appointment has been rejected.\n\n" +
+                    "Please login and book another appointment.\n\n" +
+                    "Regards,\n" +
+                    "Smart Hospital Management System";
+
+            emailService.sendEmail(
+                    patient.getEmail(),
+                    subject,
+                    body);
+        }
     }
 
 }

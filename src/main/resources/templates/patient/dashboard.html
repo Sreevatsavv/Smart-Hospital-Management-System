@@ -7,6 +7,9 @@
 <title>Patient Dashboard</title>
 
 <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+<link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+	  <link rel="stylesheet" th:href="@{/css/map.css}">
 
 </head>
 
@@ -47,12 +50,18 @@
 </div>
 
 </div>
+<h2>📍 Nearby Hospitals</h2>
+
+<div id="map"></div>
 
 <footer>
 
 © 2026 Smart Hospital Management System
 
 </footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script th:src="@{/js/map.js}"></script>
 
 </body>
 

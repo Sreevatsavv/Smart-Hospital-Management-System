@@ -1,187 +1,188 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
+
     background:#eef5ff;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     min-height:100vh;
-    padding:30px;
+
 }
 
-/* Main Form Box */
+.container{
 
-.form-box{
-    width:100%;
-    max-width:800px;
-    background:#fff;
-    padding:40px;
+    width:95%;
+
+    max-width:1100px;
+
+    background:white;
+
+    padding:35px;
+
     border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+
 }
 
-/* Heading */
+h1,h2{
 
-.form-box h2{
     text-align:center;
-    color:#1565c0;
+
+    color:#1e66d0;
+
     margin-bottom:30px;
-    font-size:38px;
-    font-weight:700;
+
 }
 
-/* Back Button */
+table{
 
-.btn{
-    display:inline-block;
-    text-decoration:none;
-    background:#1565c0;
-    color:white;
-    padding:12px 25px;
-    border-radius:10px;
-    font-size:18px;
-    transition:.3s;
-    margin-bottom:25px;
-}
-
-.btn:hover{
-    background:#0d47a1;
-}
-
-/* Labels */
-
-label{
-    display:block;
-    margin-top:18px;
-    margin-bottom:8px;
-    font-size:20px;
-    font-weight:600;
-    color:#222;
-}
-
-/* Inputs */
-
-input,
-select,
-textarea{
     width:100%;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#1e66d0;
+
+    color:white;
+
+}
+
+th{
+
     padding:15px;
-    border:1px solid #ccc;
-    border-radius:10px;
-    font-size:18px;
-    outline:none;
+
+    font-size:17px;
+
+}
+
+td{
+
+    padding:15px;
+
+    text-align:center;
+
+    border-bottom:1px solid #e5e5e5;
+
+}
+
+tbody tr{
+
     transition:.3s;
+
 }
 
-input:focus,
-select:focus,
-textarea:focus{
-    border-color:#1565c0;
-    box-shadow:0 0 10px rgba(21,101,192,.2);
+tbody tr:hover{
+
+    background:#f7fbff;
+
 }
 
-/* Readonly Patient Field */
+.accept{
 
-input[readonly]{
-    background:#f5f7fa;
-    color:#555;
-    cursor:not-allowed;
-}
+    background:#28a745;
 
-/* Textarea */
-
-textarea{
-    resize:none;
-    height:140px;
-}
-
-/* Book Button */
-
-button{
-    width:100%;
-    margin-top:30px;
-    padding:16px;
-    background:#1565c0;
     color:white;
-    border:none;
-    border-radius:10px;
-    font-size:22px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
-}
 
-button:hover{
-    background:#0d47a1;
-    transform:translateY(-2px);
-}
+    padding:8px 14px;
 
-/* Responsive */
-
-@media(max-width:768px){
-
-    .form-box{
-        padding:25px;
-    }
-
-    .form-box h2{
-        font-size:30px;
-    }
-
-    label{
-        font-size:18px;
-    }
-
-    input,
-    select,
-    textarea{
-        font-size:16px;
-    }
-
-    button{
-        font-size:18px;
-    }
-
-}
-
-.top-buttons{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:30px;
-}
-
-.dashboard-btn,
-.book-btn{
+    border-radius:8px;
 
     text-decoration:none;
-    padding:12px 22px;
-    border-radius:8px;
-    font-weight:600;
-    transition:.3s;
+
+    margin-right:8px;
+
+    font-size:14px;
+
 }
 
-.dashboard-btn{
-    background:#1565c0;
-    color:white;
-}
+.accept:hover{
 
-.dashboard-btn:hover{
-    background:#0d47a1;
-}
-
-.book-btn{
-    background:#28a745;
-    color:white;
-}
-
-.book-btn:hover{
     background:#218838;
+
+}
+
+.reject{
+
+    background:#dc3545;
+
+    color:white;
+
+    padding:8px 14px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+}
+
+.reject:hover{
+
+    background:#b52a37;
+
+}
+
+.pending{
+
+    color:#ff9800;
+
+    font-weight:bold;
+
+}
+
+.accepted{
+
+    color:#28a745;
+
+    font-weight:bold;
+
+}
+
+.rejected{
+
+    color:#dc3545;
+
+    font-weight:bold;
+
+}
+
+.back-btn{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    background:#1e66d0;
+
+    color:white;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#0d47a1;
+
 }
