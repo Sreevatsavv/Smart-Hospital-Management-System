@@ -3,60 +3,112 @@
 
 <head>
 
-<meta charset="UTF-8">
-<title>Patient Dashboard</title>
+    <meta charset="UTF-8">
+    <title>MediSync | Patient Dashboard</title>
 
-<link rel="stylesheet" th:href="@{/css/dashboard.css}">
-<link rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-	  <link rel="stylesheet" th:href="@{/css/map.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/patient.css}">
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <link rel="stylesheet" th:href="@{/css/map.css}">
 
 </head>
 
 <body>
 
-<header>
+<header class="dashboard-header">
 
-<h1>🧑 Patient Dashboard</h1>
+    <div>
+
+        <h1>🏥 MediSync</h1>
+
+        <p>Patient Dashboard</p>
+
+    </div>
 
 </header>
 
 <div class="container">
 
-<h2>Welcome Patient</h2>
+    <div class="welcome-card card">
 
-<div class="cards">
+        <h2>Welcome Patient 👋</h2>
 
-<a class="card" th:href="@{/appointment/add}">
-    <h3>📅 Book Appointment</h3>
-    <p>Schedule a Doctor Visit</p>
-</a>
+        <p>
+            Manage your appointments and discover nearby hospitals from one place.
+        </p>
 
-<a class="card" th:href="@{/patient/appointments}">
-    <h3>📋 My Appointments</h3>
-    <p>Track Appointment Status</p>
-</a>
+    </div>
 
-<a class="card" href="#">
-    <h3>👤 My Profile</h3>
-    <p>View Personal Details</p>
-</a>
+    <div class="dashboard-grid">
 
-<a class="card logout" th:href="@{/login}">
-    <h3>🚪 Logout</h3>
-    <p>Sign Out</p>
-</a>
+        <a class="dashboard-card" th:href="@{/appointment/add}">
+
+            <div class="icon">📅</div>
+
+            <h3>Book Appointment</h3>
+
+            <p>Schedule a Doctor Visit</p>
+
+        </a>
+
+        <a class="dashboard-card" th:href="@{/patient/appointments}">
+
+            <div class="icon">📋</div>
+
+            <h3>My Appointments</h3>
+
+            <p>Track Appointment Status</p>
+
+        </a>
+
+        <a class="dashboard-card" href="#">
+
+            <div class="icon">👤</div>
+
+            <h3>My Profile</h3>
+
+            <p>View Personal Details</p>
+
+        </a>
+
+        <a class="dashboard-card logout" th:href="@{/login}">
+
+            <div class="icon">🚪</div>
+
+            <h3>Logout</h3>
+
+            <p>Sign Out</p>
+
+        </a>
+
+    </div>
+
+    <div class="map-section">
+
+        <h2>📍 Nearby Hospitals</h2>
+
+        <div class="card">
+
+            <div id="map"></div>
+
+        </div>
+
+    </div>
 
 </div>
-
-</div>
-<h2>📍 Nearby Hospitals</h2>
-
-<div id="map"></div>
 
 <footer>
 
-© 2026 Smart Hospital Management System
+    © 2026 MediSync • Smart Hospital Management System
 
 </footer>
 

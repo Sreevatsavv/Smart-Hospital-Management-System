@@ -3,69 +3,129 @@
 
 <head>
 
-<meta charset="UTF-8">
-<title>Admin Dashboard</title>
+    <meta charset="UTF-8">
 
-<link rel="stylesheet" th:href="@{/css/dashboard.css}">
+    <title>MediSync | Admin Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
 
 </head>
 
 <body>
 
-<header>
+<header class="dashboard-header">
 
-<h1>🏥 Smart Hospital Management System</h1>
+    <div>
+
+        <h1>🏥 MediSync</h1>
+
+        <p>Administrator Dashboard</p>
+
+    </div>
 
 </header>
 
 <div class="container">
 
-<h2>Administrator Dashboard</h2>
+    <div class="welcome-card card">
 
-<div class="cards">
+        <h2>Welcome Administrator 👋</h2>
 
-<a class="card" th:href="@{/doctor/list}">
-    <h3>👨‍⚕️ Doctors</h3>
-    <p>Manage Doctors</p>
-</a>
+        <p>
 
-<a class="card" th:href="@{/patient/list}">
-    <h3>🧑 Patients</h3>
-    <p>Manage Patients</p>
-</a>
+            Manage doctors, patients and appointments from one centralized dashboard.
 
-<a class="card" th:href="@{/appointment/list}">
-    <h3>📅 Appointments</h3>
-    <p>Manage All Appointments</p>
-</a>
+        </p>
 
-<a class="card" th:href="@{/appointment/add}">
-    <h3>📝 Book Appointment</h3>
-    <p>Create Appointment</p>
-</a>
+    </div>
 
-<a class="card" href="#">
-    <h3>💰 Billing</h3>
-    <p>Coming Soon</p>
-</a>
+    <div class="dashboard-grid">
 
-<a class="card" href="#">
-    <h3>📊 Reports</h3>
-    <p>Coming Soon</p>
-</a>
+        <a class="dashboard-card" th:href="@{/doctor/list}">
 
-<a class="card logout" th:href="@{/login}">
-    <h3>🚪 Logout</h3>
-    <p>Sign Out</p>
-</a>
+            <div class="icon">👨‍⚕️</div>
 
-</div>
+            <h3>Doctors</h3>
+
+            <p>Manage doctors</p>
+
+        </a>
+
+        <a class="dashboard-card" th:href="@{/patient/list}">
+
+            <div class="icon">👤</div>
+
+            <h3>Patients</h3>
+
+            <p>Manage patients</p>
+
+        </a>
+
+        <a class="dashboard-card" th:href="@{/appointment/list}">
+
+            <div class="icon">📅</div>
+
+            <h3>Appointments</h3>
+
+            <p>Manage appointments</p>
+
+        </a>
+
+        <a class="dashboard-card" th:href="@{/appointment/add}">
+
+            <div class="icon">📝</div>
+
+            <h3>Book Appointment</h3>
+
+            <p>Create appointment</p>
+
+        </a>
+
+        <a class="dashboard-card">
+
+            <div class="icon">💰</div>
+
+            <h3>Billing</h3>
+
+            <p>Coming Soon</p>
+
+        </a>
+
+        <a class="dashboard-card">
+
+            <div class="icon">📊</div>
+
+            <h3>Reports</h3>
+
+            <p>Coming Soon</p>
+
+        </a>
+
+        <a class="dashboard-card logout"
+           th:href="@{/login}">
+
+            <div class="icon">🚪</div>
+
+            <h3>Logout</h3>
+
+            <p>Sign Out</p>
+
+        </a>
+
+    </div>
 
 </div>
 
 <footer>
 
-© 2026 Smart Hospital Management System
+© 2026 MediSync • Smart Hospital Management System
 
 </footer>
 

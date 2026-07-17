@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
 
     <title>Doctor Appointments</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 
     <link rel="stylesheet" th:href="@{/css/appointment.css}">
 
@@ -15,7 +16,16 @@
 
 <div class="container">
 
-    <h2>My Appointments</h2>
+	<div class="page-header">
+
+	<h1>📅 Doctor Appointments</h1>
+
+	<a class="back-btn"
+	th:href="@{/doctor}">
+	← Dashboard
+	</a>
+
+	</div>
 
     <table>
 
@@ -75,10 +85,20 @@
                 </th:block>
 
                 <!-- Show Accepted text -->
-                <span class="accepted"
-                      th:if="${appointment.status == 'ACCEPTED'}">
-                    ✔ Accepted
-                </span>
+				<th:block th:if="${appointment.status == 'ACCEPTED'}">
+
+				    <span class="accepted">
+				        ✔ Accepted
+				    </span>
+
+				    <br><br>
+
+				    <a class="prescription-btn"
+				       th:href="@{'/prescription/write/' + ${appointment.id}}">
+				        💊 Give Prescription
+				    </a>
+
+				</th:block>
 
                 <!-- Show Rejected text -->
                 <span class="rejected"

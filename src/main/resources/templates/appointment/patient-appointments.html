@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 
 <title>My Appointments</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
 
 <link rel="stylesheet" th:href="@{/css/appointment.css}">
 
@@ -15,63 +16,60 @@
 
 <div class="container">
 
-<h2>My Appointments</h2>
+    <div class="top-buttons">
 
-<table>
+        <a th:href="@{/patient}" class="dashboard-btn">
+            ← Return to Dashboard
+        </a>
 
-<thead>
+        <a th:href="@{/appointment/add}" class="book-btn">
+            + Book Another Appointment
+        </a>
 
-<tr>
+    </div>
 
-<th>Doctor</th>
-<th>Date</th>
-<th>Time</th>
-<th>Reason</th>
-<th>Status</th>
+    <h2>My Appointments</h2>
 
-</tr>
+    <table>
 
-</thead>
+        <thead>
+        <tr>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Reason</th>
+            <th>Status</th>
+        </tr>
+        </thead>
 
-<tbody>
+        <tbody>
 
-<tr th:each="appointment : ${appointments}">
+        <tr th:each="appointment : ${appointments}">
 
-<td th:text="${appointment.doctor.name}"></td>
+            <td th:text="${appointment.doctor.name}"></td>
+            <td th:text="${appointment.appointmentDate}"></td>
+            <td th:text="${appointment.appointmentTime}"></td>
+            <td th:text="${appointment.reason}"></td>
 
-<td th:text="${appointment.appointmentDate}"></td>
+			<td>
 
-<td th:text="${appointment.appointmentTime}"></td>
+			<span
+			th:text="${appointment.status}"
+			th:classappend="
+			${appointment.status=='PENDING'} ? 'pending' :
+			(${appointment.status=='ACCEPTED'} ? 'accepted' : 'rejected')">
 
-<td th:text="${appointment.reason}"></td>
+			</span>
 
-<td>
+			</td>
 
-<span th:text="${appointment.status}"></span>
+        </tr>
 
-</td>
+        </tbody>
 
-</tr>
-
-</tbody>
-
-</table>
+    </table>
 
 </div>
-
-<div class="top-buttons">
-
-    <a th:href="@{/patient}" class="dashboard-btn">
-        ← Return to Dashboard
-    </a>
-
-    <a th:href="@{/appointment/add}" class="book-btn">
-        + Book Another Appointment
-    </a>
-
-</div>
-
-<h2>My Appointments</h2>
 
 </body>
 

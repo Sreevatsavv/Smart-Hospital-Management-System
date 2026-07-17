@@ -3,76 +3,91 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<title>Book Appointment</title>
+    <title>MediSync | Book Appointment</title>
 
-<link rel="stylesheet" th:href="@{/css/appointment.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/appointment.css}">
 
 </head>
 
 <body>
 
-<div class="form-box">
+<div class="container">
 
-<a class="btn" th:href="@{/appointment/list}">
-← Appointment List
-</a>
+    <div class="page-header">
 
-<br><br>
+        <h1>📅 Book Appointment</h1>
 
-<h2>Book Appointment</h2>
+        <a class="back-btn" th:href="@{/patient}">
+            ← Dashboard
+        </a>
 
-<form th:action="@{/appointment/save}"
-      th:object="${appointment}"
-      method="post">
+    </div>
 
-<label>Select Doctor</label>
+    <div class="form-card">
 
-<select name="doctorId" required>
+        <form th:action="@{/appointment/save}"
+              th:object="${appointment}"
+              method="post">
 
-<option value="">Choose Doctor</option>
+            <label>Select Doctor</label>
 
-<option
-th:each="doctor : ${doctors}"
-th:value="${doctor.id}"
-th:text="${doctor.name}">
-</option>
+            <select name="doctorId" required>
 
-</select>
+                <option value="">Choose Doctor</option>
 
-<label>Patient</label>
+                <option
+                        th:each="doctor : ${doctors}"
+                        th:value="${doctor.id}"
+                        th:text="${doctor.name}">
+                </option>
 
-<input
-type="text"
-th:value="${patient.name}"
-readonly>
+            </select>
 
-<input
-type="hidden"
-name="patientId"
-th:value="${patient.id}">
+            <label>Patient</label>
 
-<input type="date"
-th:field="*{appointmentDate}"
-required>
+            <input type="text"
+                   th:value="${patient.name}"
+                   readonly>
 
-<input type="time"
-th:field="*{appointmentTime}"
-required>
+            <input type="hidden"
+                   name="patientId"
+                   th:value="${patient.id}">
 
-<textarea
-th:field="*{reason}"
-placeholder="Reason for Appointment">
-</textarea>
+            <label>Date</label>
 
-<button type="submit">
+            <input type="date"
+                   th:field="*{appointmentDate}"
+                   required>
 
-Book Appointment
+            <label>Time</label>
 
-</button>
+            <input type="time"
+                   th:field="*{appointmentTime}"
+                   required>
 
-</form>
+            <label>Reason</label>
+
+            <textarea
+                    th:field="*{reason}"
+                    placeholder="Describe your health concern...">
+            </textarea>
+
+            <button type="submit">
+                📅 Book Appointment
+            </button>
+
+        </form>
+
+    </div>
 
 </div>
 

@@ -1,6 +1,6 @@
-/*=========================================
-        Doctor Dashboard
-=========================================*/
+/*=========================
+    Admin Dashboard
+=========================*/
 
 .dashboard-header{
 
@@ -8,9 +8,9 @@
 
     color:white;
 
-    padding:30px;
-
     text-align:center;
+
+    padding:30px;
 
 }
 
@@ -18,31 +18,17 @@
 
     color:white;
 
-    margin-bottom:5px;
-
 }
 
 .dashboard-header p{
 
     color:#E5E7EB;
 
-    margin:0;
-
 }
 
 .welcome-card{
 
-    margin-top:35px;
-
-    margin-bottom:35px;
-
-}
-
-.welcome-card p{
-
-    margin-top:10px;
-
-    color:var(--text-light);
+    margin:35px 0;
 
 }
 
@@ -66,13 +52,11 @@
 
     text-align:center;
 
-    text-decoration:none;
+    box-shadow:var(--shadow);
 
     color:var(--text);
 
-    box-shadow:var(--shadow);
-
-    transition:all .3s ease;
+    transition:.3s;
 
 }
 
@@ -109,15 +93,5 @@
 .logout{
 
     border-top:5px solid var(--danger);
-
-}
-
-@media(max-width:768px){
-
-    .dashboard-grid{
-
-        grid-template-columns:1fr;
-
-    }
 
 }

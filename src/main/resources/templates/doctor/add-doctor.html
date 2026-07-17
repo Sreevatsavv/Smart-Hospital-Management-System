@@ -3,43 +3,67 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<title>Add Doctor</title>
+    <title>MediSync | Add Doctor</title>
 
-<link rel="stylesheet" th:href="@{/css/doctor.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/doctor.css}">
 
 </head>
 
 <body>
 
-<div class="form-box">
+<div class="container">
 
-<a class="btn" th:href="@{/doctor/list}">
-← Back to Doctor List
-</a>
+    <div class="page-header">
 
-<br><br>
+        <h1>👨‍⚕️ Add Doctor</h1>
 
-<h2>Add Doctor</h2>
+        <a class="back-btn"
+           th:href="@{/doctor/list}">
+            ← Doctor List
+        </a>
 
-<form th:action="@{/doctor/save}" th:object="${doctor}" method="post">
+    </div>
 
-<input type="text" th:field="*{name}" placeholder="Doctor Name">
+    <div class="form-card">
 
-<input type="text" th:field="*{specialization}" placeholder="Specialization">
+        <form th:action="@{/doctor/save}"
+              th:object="${doctor}"
+              method="post">
 
-<input type="text" th:field="*{qualification}" placeholder="Qualification">
+            <input type="text"
+                   th:field="*{name}"
+                   placeholder="Doctor Name">
 
-<input type="number" th:field="*{experience}" placeholder="Experience">
+            <input type="text"
+                   th:field="*{specialization}"
+                   placeholder="Specialization">
 
-<input type="text" th:field="*{phone}" placeholder="Phone">
+            <input type="text"
+                   th:field="*{qualification}"
+                   placeholder="Qualification">
 
-<input type="email" th:field="*{email}" placeholder="Email">
+            <input type="number"
+                   th:field="*{experience}"
+                   placeholder="Experience">
 
-<button type="submit">Save Doctor</button>
+            <input type="text"
+                   th:field="*{phone}"
+                   placeholder="Phone">
 
-</form>
+            <input type="email"
+                   th:field="*{email}"
+                   placeholder="Email">
+
+            <button type="submit">
+                💾 Save Doctor
+            </button>
+
+        </form>
+
+    </div>
 
 </div>
 
